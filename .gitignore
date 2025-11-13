@@ -1,0 +1,48 @@
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Testing
+coverage/
+
+# Production
+build/
+dist/
+*.log
+
+# Environment
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Tauri
+desktop/src-tauri/target/
+
+# Temp files
+backend/temp/
+backend/cache/
+backend/undefined/
+logs/
+
+# Mobile
+mobile/.expo/
+mobile/dist/
+
+# Audio cache
+*.wav
+*.mp3
+*.jpg
+*.png
+!desktop/src-tauri/icons/*.png
+!mobile/assets/*.png
