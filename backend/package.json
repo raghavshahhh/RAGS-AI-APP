@@ -25,6 +25,7 @@
   "license": "MIT",
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
+    "@mediapipe/face_detection": "^0.4.1646425229",
     "@picovoice/porcupine-node": "^3.0.1",
     "@picovoice/pvrecorder-node": "^1.2.2",
     "@supabase/supabase-js": "^2.39.0",
@@ -38,6 +39,7 @@
     "ollama": "^0.6.2",
     "puppeteer": "^24.29.1",
     "socket.io": "^4.8.1",
+    "tesseract.js": "^6.0.1",
     "ws": "^8.16.0"
   },
   "devDependencies": {
