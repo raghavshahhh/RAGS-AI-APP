@@ -1,98 +1,120 @@
 # 🤖 RAGS AI - Your Offline-First AI Operating System
 
-**RAGS** (Raghav's AI General System) is a voice-controlled AI assistant that works **100% offline**, with features like habit tracking, content generation, Instagram posting, and system automation.
+**RAGS** (Raghav's AI General System) is a voice-controlled AI assistant that works **100% offline**, with features like Mac automation, camera vision, web search, and intelligent memory.
 
 Think **JARVIS from Iron Man**, but real and running on your Mac.
+
+[![GitHub](https://img.shields.io/badge/GitHub-ragspro%2FRAGS--AI-blue)](https://github.com/ragspro/RAGS-AI)
+[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
+[![Status](https://img.shields.io/badge/Status-95%25%20Complete-brightgreen)](docs/STATUS.md)
 
 ---
 
 ## ✨ Features
 
-### 🎤 Voice Control (PHASE 1 - ✅ COMPLETE)
+### 🎤 Voice Control
 - **Always-On Wake Word** - Say "Hey RAGS" anytime
 - **Offline Speech-to-Text** - Whisper.cpp (no internet needed)
-- **Natural Voice** - ElevenLabs + Coqui TTS
-- **Local AI Brain** - Ollama (llama3.2, phi-3, mistral)
-- **Persistent Memory** - Remembers all conversations
-- **Complete Voice Loop** - Wake word → STT → AI → TTS → Speaker
+- **Natural Voice** - Edge-TTS with Indian accent (Rishi)
+- **Continuous Listening** - Hindi/English/Hinglish support
+- **Interim Transcription** - See text while speaking
 
-### 🤖 Agent System (PHASE 2 - Coming Soon)
-- Self-executing task engine
-- Action graph for chaining tasks
-- Autopilot mode for daily routines
-- Function calling for tools
+### 🧠 AI Brain
+- **Local AI** - Ollama (llama3.2:3b, llava, phi3)
+- **Context-Aware** - Knows what you're doing
+- **Emotional Responses** - Personality engine
+- **Web Search** - Real-time DuckDuckGo integration
+- **Memory System** - Remembers everything locally
 
-### 🎨 UI/UX (PHASE 3 - Coming Soon)
-- 3D AI Orb (Three.js)
-- Holographic HUD panels
-- Command palette (⌘+K)
-- Voice visualizer
-- Task flow map
+### 🖥️ Mac Automation
+- **File Operations** - Open, create, move files/folders
+- **App Control** - Launch and manage applications
+- **System Control** - Volume, screenshots, notifications
+- **Browser Automation** - Scroll, click, navigate
+- **AppleScript Integration** - Full Mac control
 
-### 🖥️ Device Control (PHASE 4 - Coming Soon)
-- Mac automation (AppleScript)
-- Shortcuts integration
-- File system manager
-- Browser automation
-- System controls
+### 👁️ Camera Vision
+- **LLaVA Integration** - See and understand images
+- **Object Recognition** - Identify objects in real-time
+- **Scene Description** - Describe what's visible
+- **Visual Q&A** - Answer questions about images
 
-### 📱 Content Creator (PHASE 5 - Coming Soon)
-- AI content generation
-- Image/video generation
-- Instagram auto-posting
-- Multi-platform publishing
-- Content calendar
+### 🎨 Desktop UI
+- **3D NeoEyes** - Animated AI face with emotions
+- **Voice Visualizer** - Real-time audio visualization
+- **Command Palette** - Quick actions (⌘+K)
+- **Glassmorphism UI** - Modern, beautiful interface
+- **Multiple Panels** - Notes, Reminders, Browser Control, System Monitor
 
-### 🧠 Personality (PHASE 6 - Coming Soon)
-- Emotional responses
-- Hindi/English mix (Hinglish)
-- Memory reflection
-- Mood AI
-- Life score dashboard
+### 🤖 Smart Features
+- **Smart Reminders** - Natural language time parsing
+- **Autopilot Mode** - Automated daily routines
+- **Plugin Framework** - Extensible with custom plugins
+- **Context Awareness** - Active window detection
+- **Personality Engine** - Emotional intelligence
 
 ---
 
-## 🚀 Quick Start (5 Minutes)
+## 📊 Project Status
 
-### 1. Install Prerequisites
+```
+✅ Core AI System          100%
+✅ Voice Control           100%
+✅ Mac Automation          100%
+✅ Camera Vision           100%
+✅ Desktop UI              100%
+✅ Memory System           100%
+✅ Smart Features          100%
+⚠️  Social Media           50%
+❌ Cross-Device Sync       0%
+
+Overall: 95% Complete
+```
+
+**See [STATUS.md](docs/STATUS.md) for detailed feature breakdown**
+
+---
+
+## 🚀 Quick Start
+
+### Prerequisites
 ```bash
 # Install Ollama
 brew install ollama
-ollama serve  # Keep this running
+ollama serve
 
-# In new terminal
-ollama pull llama3.2:latest
-
-# Install Whisper.cpp
-git clone https://github.com/ggerganov/whisper.cpp.git
-cd whisper.cpp
-make
-bash ./models/download-ggml-model.sh base.en
-sudo cp main /usr/local/bin/whisper
+# Pull AI models
+ollama pull llama3.2:3b
+ollama pull llava:latest
 ```
 
-### 2. Get API Keys
-- **Picovoice** (Free): https://console.picovoice.ai/
-- **Supabase** (Free): https://supabase.com/
-- **ElevenLabs** (Optional): https://elevenlabs.io/
-
-### 3. Setup Backend
+### Installation
 ```bash
+# Clone repository
+git clone https://github.com/ragspro/RAGS-AI.git
+cd RAGS-AI
+
+# Install backend
 cd backend
 npm install
 cp .env.example .env
 # Edit .env with your API keys
+
+# Install desktop
+cd ../desktop
+npm install
 ```
 
-### 4. Setup Database
-Go to Supabase SQL Editor and run the SQL from `SETUP_GUIDE.md`
-
-### 5. Test Voice System
+### Run
 ```bash
-npm run test:voice
+# Terminal 1: Backend
+cd backend && npm run dev
+
+# Terminal 2: Desktop
+cd desktop && npm run dev
 ```
 
-Say **"Hey RAGS"** and start talking! 🎤
+**See [SETUP.md](docs/SETUP.md) for detailed setup instructions**
 
 ---
 
@@ -102,152 +124,96 @@ Say **"Hey RAGS"** and start talking! 🎤
 RAGS.V1/
 ├── backend/              # Node.js/TypeScript backend
 │   ├── src/
-│   │   ├── services/     # Core services
-│   │   │   ├── wakeword-porcupine.ts    # Wake word detection
-│   │   │   ├── stt-whisper-local.ts     # Speech-to-text
-│   │   │   ├── tts-hybrid.ts            # Text-to-speech
-│   │   │   ├── ollama-brain.ts          # Local AI brain
-│   │   │   ├── memory-system.ts         # Memory system
-│   │   │   └── voice-pipeline.ts        # Complete pipeline
-│   │   ├── routes/       # API routes
+│   │   ├── services/     # 70+ core services
+│   │   ├── routes/       # API endpoints
 │   │   └── config/       # Configuration
 │   └── package.json
 ├── desktop/              # Tauri desktop app
+│   ├── src/
+│   │   ├── components/   # 30+ React components
+│   │   ├── services/     # API integration
+│   │   └── store/        # State management
+│   └── src-tauri/        # Rust backend
 ├── mobile/               # React Native mobile app
-├── SETUP_GUIDE.md        # Complete setup instructions
-├── QUICKSTART.md         # 5-minute quick start
-└── PROGRESS_REPORT.md    # Current progress
+└── docs/                 # Documentation
 ```
 
 ---
 
 ## 🛠️ Tech Stack
 
-### Backend
-- **Runtime:** Node.js + TypeScript
-- **Framework:** Express.js
-- **AI:** Ollama (llama3.2, phi-3)
-- **STT:** Whisper.cpp (offline)
-- **TTS:** ElevenLabs + Coqui (hybrid)
-- **Wake Word:** Picovoice Porcupine
-- **Database:** Supabase + pgvector
-- **Memory:** Semantic search with embeddings
+**Backend:**
+- Node.js + TypeScript + Express.js
+- Ollama (Local LLM)
+- Whisper.cpp (Offline STT)
+- Edge-TTS (Indian accent TTS)
+- Picovoice Porcupine (Wake word)
+- Puppeteer (Browser automation)
+- Socket.io (Real-time communication)
 
-### Desktop
-- **Framework:** Tauri (Rust + TypeScript)
-- **UI:** React + TypeScript
-- **3D:** Three.js
-- **Styling:** Tailwind CSS
+**Desktop:**
+- Tauri (Rust + TypeScript)
+- React + Three.js
+- Framer Motion + Tailwind CSS
+- Zustand (State management)
 
-### Mobile
-- **Framework:** React Native + Expo
-- **Language:** TypeScript
-- **UI:** React Native Reanimated
+**Mobile:**
+- React Native + Expo
+- TypeScript
 
 ---
 
-## 📊 Progress
+## 🎯 Voice Commands
+
+Say **"Hey RAGS"** then:
 
 ```
-PHASE 1: Core Brain          ████████████████████ 100% ✅
-PHASE 2: Agent System         ░░░░░░░░░░░░░░░░░░░░   0%
-PHASE 3: UI/UX                ░░░░░░░░░░░░░░░░░░░░   0%
-PHASE 4: Device Control       ░░░░░░░░░░░░░░░░░░░░   0%
-PHASE 5: Content Creator      ░░░░░░░░░░░░░░░░░░░░   0%
-PHASE 6: Personality          ░░░░░░░░░░░░░░░░░░░░   0%
-
-Total: 16.7% (1/6 phases complete)
-```
-
----
-
-## 🎯 Roadmap
-
-### ✅ PHASE 1: Core Brain (COMPLETE)
-- [x] Wake word detection
-- [x] Offline STT
-- [x] Hybrid TTS
-- [x] Local AI brain
-- [x] Memory system
-- [x] Voice pipeline
-
-### 🚧 PHASE 2: Agent System (Next)
-- [ ] Agent decision engine
-- [ ] Action graph
-- [ ] Task queue
-- [ ] Autopilot mode
-- [ ] Function calling
-
-### 📅 PHASE 3-6: Coming Soon
-See `PROGRESS_REPORT.md` for details
-
----
-
-## 🧪 Testing
-
-### Test Voice Pipeline
-```bash
-cd backend
-npm run test:voice
-```
-
-### Test Individual Components
-```bash
-# Test Ollama
-node -e "const {OllamaBrain}=require('./dist/services/ollama-brain');new OllamaBrain().chat('Hello').then(console.log)"
-
-# Test Whisper
-npm run test:whisper
-
-# Test TTS
-npm run test:tts
+✅ "search Python on web"
+✅ "remember I like coding"
+✅ "what do you remember?"
+✅ "remind me to call John at 5 PM"
+✅ "show my reminders"
+✅ "volume up"
+✅ "take a screenshot"
+✅ "open folder Desktop"
+✅ "start autopilot"
+✅ "what is this?" (camera)
+✅ "scroll down"
+✅ "open YouTube"
 ```
 
 ---
 
 ## 📚 Documentation
 
-- **[QUICKSTART.md](QUICKSTART.md)** - Get started in 5 minutes
-- **[SETUP_GUIDE.md](SETUP_GUIDE.md)** - Complete setup instructions
-- **[PROGRESS_REPORT.md](PROGRESS_REPORT.md)** - Current progress and next steps
+- **[SETUP.md](docs/SETUP.md)** - Complete setup guide
+- **[STATUS.md](docs/STATUS.md)** - Feature status & roadmap
+- **[API.md](docs/API.md)** - API documentation
+- **[COMMANDS.md](docs/COMMANDS.md)** - Voice commands reference
 
 ---
 
-## 🐛 Troubleshooting
+## 🎥 Demo
 
-### Ollama not responding
-```bash
-# Check if running
-curl http://localhost:11434/api/tags
-
-# Restart
-pkill ollama && ollama serve
-```
-
-### Whisper not found
-```bash
-which whisper
-# If not found, reinstall from whisper.cpp
-```
-
-### Wake word not detecting
-- Check microphone permissions
-- Verify Picovoice access key
-- List audio devices and select correct one
-
-See `SETUP_GUIDE.md` for more troubleshooting.
+*(Add screenshots/videos here)*
 
 ---
 
 ## 🤝 Contributing
 
-This is a personal project, but suggestions are welcome!
+This is a personal project, but suggestions and contributions are welcome!
+
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Open a Pull Request
 
 ---
 
 ## 📝 License
 
-MIT License - See LICENSE file
+MIT License - See [LICENSE](LICENSE) file
 
 ---
 
@@ -257,13 +223,20 @@ Built with:
 - [Ollama](https://ollama.ai/) - Local LLM
 - [Whisper.cpp](https://github.com/ggerganov/whisper.cpp) - STT
 - [Picovoice Porcupine](https://picovoice.ai/) - Wake word
-- [ElevenLabs](https://elevenlabs.io/) - TTS
-- [Supabase](https://supabase.com/) - Database
+- [Edge-TTS](https://github.com/rany2/edge-tts) - TTS
 - [Tauri](https://tauri.app/) - Desktop framework
+- [Three.js](https://threejs.org/) - 3D graphics
+
+---
+
+## 📧 Contact
+
+**Raghav** - [@ragspro](https://github.com/ragspro)
+
+**Project Link:** https://github.com/ragspro/RAGS-AI
 
 ---
 
 **RAGS AI - Your Offline-First AI Operating System** 🚀
 
 Made with ❤️ by Raghav
-
