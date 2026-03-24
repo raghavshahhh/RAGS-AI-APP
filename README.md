@@ -1,12 +1,57 @@
-# 🤖 RAGS AI - Your Offline-First AI Operating System
+<p align="center">
+  <img src="https://raw.githubusercontent.com/raghavshahhh/RAGS-AI-APP/main/desktop/public/logo.png" alt="RAGS AI Logo" width="120">
+</p>
 
-**RAGS** (Raghav's AI General System) is a voice-controlled AI assistant that works **100% offline**, with features like Mac automation, camera vision, web search, and intelligent memory.
+<h1 align="center">
+  🤖 RAGS AI
+</h1>
 
-Think **JARVIS from Iron Man**, but real and running on your Mac.
+<p align="center">
+  <strong>🚀 Your Offline-First AI Operating System - Think JARVIS, But Real</strong>
+</p>
 
-[![GitHub](https://img.shields.io/badge/GitHub-ragspro%2FRAGS--AI-blue)](https://github.com/ragspro/RAGS-AI)
-[![License](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
-[![Status](https://img.shields.io/badge/Status-95%25%20Complete-brightgreen)](docs/STATUS.md)
+<p align="center">
+  <a href="https://github.com/raghavshahhh/RAGS-AI-APP/stargazers">
+    <img src="https://img.shields.io/github/stars/raghavshahhh/RAGS-AI-APP?style=for-the-badge&color=yellow" alt="Stars">
+  </a>
+  <a href="https://github.com/raghavshahhh/RAGS-AI-APP/network/members">
+    <img src="https://img.shields.io/github/forks/raghavshahhh/RAGS-AI-APP?style=for-the-badge&color=green" alt="Forks">
+  </a>
+  <a href="LICENSE">
+    <img src="https://img.shields.io/badge/License-MIT-green?style=for-the-badge" alt="License">
+  </a>
+</p>
+
+<p align="center">
+  <img src="https://img.shields.io/badge/Tauri-Rust-FFC131?style=flat-square&logo=tauri" alt="Tauri">
+  <img src="https://img.shields.io/badge/React-18-61DAFB?style=flat-square&logo=react" alt="React">
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=flat-square&logo=typescript" alt="TypeScript">
+  <img src="https://img.shields.io/badge/Ollama-AI-000000?style=flat-square" alt="Ollama">
+  <img src="https://img.shields.io/badge/Three.js-3D-000000?style=flat-square&logo=three.js" alt="Three.js">
+  <img src="https://img.shields.io/badge/Mediapipe-Vision-0099FF?style=flat-square&logo=google" alt="Mediapipe">
+</p>
+
+---
+
+## 🎯 What is RAGS AI?
+
+**RAGS AI** (Raghav's AI General System) is a **voice-controlled AI assistant** that works **100% offline** with features like Mac automation, camera vision, web search, and intelligent memory. Think **JARVIS from Iron Man**, but real and running on your Mac.
+
+---
+
+## ⭐ Project Status: 95% Complete
+
+| Feature | Status |
+|---------|--------|
+| **Core AI System** | ✅ 100% |
+| **Voice Control** | ✅ 100% |
+| **Mac Automation** | ✅ 100% |
+| **Camera Vision** | ✅ 100% |
+| **Desktop UI** | ✅ 100% |
+| **Memory System** | ✅ 100% |
+| **Smart Features** | ✅ 100% |
+| **Social Media** | ⚠️ 50% |
+| **Cross-Device Sync** | ❌ 0% |
 
 ---
 
@@ -46,67 +91,73 @@ Think **JARVIS from Iron Man**, but real and running on your Mac.
 - **Glassmorphism UI** - Modern, beautiful interface
 - **Multiple Panels** - Notes, Reminders, Browser Control, System Monitor
 
-### 🤖 Smart Features
-- **Smart Reminders** - Natural language time parsing
-- **Autopilot Mode** - Automated daily routines
-- **Plugin Framework** - Extensible with custom plugins
-- **Context Awareness** - Active window detection
-- **Personality Engine** - Emotional intelligence
-
 ---
 
-## 📊 Project Status
+## 🛠️ Tech Stack
 
 ```
-✅ Core AI System          100%
-✅ Voice Control           100%
-✅ Mac Automation          100%
-✅ Camera Vision           100%
-✅ Desktop UI              100%
-✅ Memory System           100%
-✅ Smart Features          100%
-⚠️  Social Media           50%
-❌ Cross-Device Sync       0%
-
-Overall: 95% Complete
+┌─────────────────────────────────────────────────────────────┐
+│ Desktop: Tauri (Rust + TypeScript)                          │
+├─────────────────────────────────────────────────────────────┤
+│ Frontend: React + Three.js                                  │
+├─────────────────────────────────────────────────────────────┤
+│ Styling: Tailwind CSS + Framer Motion                       │
+├─────────────────────────────────────────────────────────────┤
+│ State: Zustand                                              │
+├─────────────────────────────────────────────────────────────┤
+│ Backend: Node.js + TypeScript + Express                     │
+├─────────────────────────────────────────────────────────────┤
+│ AI: Ollama (Local LLM)                                      │
+├─────────────────────────────────────────────────────────────┤
+│ STT: Whisper.cpp (Offline)                                │
+├─────────────────────────────────────────────────────────────┤
+│ TTS: Edge-TTS (Indian Accent)                               │
+├─────────────────────────────────────────────────────────────┤
+│ Wake Word: Picovoice Porcupine                              │
+├─────────────────────────────────────────────────────────────┤
+│ Vision: MediaPipe + LLaVA                                   │
+├─────────────────────────────────────────────────────────────┤
+│ Mobile: React Native + Expo                                │
+└─────────────────────────────────────────────────────────────┘
 ```
-
-**See [STATUS.md](docs/STATUS.md) for detailed feature breakdown**
 
 ---
 
 ## 🚀 Quick Start
 
 ### Prerequisites
+
+- macOS 12+ (Mac only)
+- Node.js 18+ installed
+- Rust toolchain installed
+- Ollama installed
+
+### Installation
+
 ```bash
-# Install Ollama
+# 1. Install Ollama
 brew install ollama
 ollama serve
 
 # Pull AI models
 ollama pull llama3.2:3b
 ollama pull llava:latest
-```
 
-### Installation
-```bash
-# Clone repository
-git clone https://github.com/ragspro/RAGS-AI.git
-cd RAGS-AI
+# 2. Clone repository
+git clone https://github.com/raghavshahhh/RAGS-AI-APP.git
+cd RAGS-AI-APP
 
-# Install backend
+# 3. Install Backend
 cd backend
 npm install
 cp .env.example .env
 # Edit .env with your API keys
 
-# Install desktop
+# 4. Install Desktop
 cd ../desktop
 npm install
-```
 
-### Run
-```bash
+# 5. Run (2 terminals)
 # Terminal 1: Backend
 cd backend && npm run dev
 
@@ -114,129 +165,77 @@ cd backend && npm run dev
 cd desktop && npm run dev
 ```
 
-**See [SETUP.md](docs/SETUP.md) for detailed setup instructions**
-
----
-
-## 📁 Project Structure
-
-```
-RAGS.V1/
-├── backend/              # Node.js/TypeScript backend
-│   ├── src/
-│   │   ├── services/     # 70+ core services
-│   │   ├── routes/       # API endpoints
-│   │   └── config/       # Configuration
-│   └── package.json
-├── desktop/              # Tauri desktop app
-│   ├── src/
-│   │   ├── components/   # 30+ React components
-│   │   ├── services/     # API integration
-│   │   └── store/        # State management
-│   └── src-tauri/        # Rust backend
-├── mobile/               # React Native mobile app
-└── docs/                 # Documentation
-```
-
----
-
-## 🛠️ Tech Stack
-
-**Backend:**
-- Node.js + TypeScript + Express.js
-- Ollama (Local LLM)
-- Whisper.cpp (Offline STT)
-- Edge-TTS (Indian accent TTS)
-- Picovoice Porcupine (Wake word)
-- Puppeteer (Browser automation)
-- Socket.io (Real-time communication)
-
-**Desktop:**
-- Tauri (Rust + TypeScript)
-- React + Three.js
-- Framer Motion + Tailwind CSS
-- Zustand (State management)
-
-**Mobile:**
-- React Native + Expo
-- TypeScript
-
 ---
 
 ## 🎯 Voice Commands
 
 Say **"Hey RAGS"** then:
 
-```
-✅ "search Python on web"
-✅ "remember I like coding"
-✅ "what do you remember?"
-✅ "remind me to call John at 5 PM"
-✅ "show my reminders"
-✅ "volume up"
-✅ "take a screenshot"
-✅ "open folder Desktop"
-✅ "start autopilot"
-✅ "what is this?" (camera)
-✅ "scroll down"
-✅ "open YouTube"
-```
+| Command | Action |
+|---------|--------|
+| "Search Python on web" | Web search |
+| "Remember I like coding" | Save to memory |
+| "What do you remember?" | Recall memories |
+| "Remind me to call John at 5 PM" | Set reminder |
+| "Volume up" | System control |
+| "Take a screenshot" | Capture screen |
+| "Open folder Desktop" | File operations |
+| "What is this?" | Camera vision |
+| "Open YouTube" | Browser automation |
 
 ---
 
-## 📚 Documentation
+## 📁 Project Structure
 
-- **[SETUP.md](docs/SETUP.md)** - Complete setup guide
-- **[STATUS.md](docs/STATUS.md)** - Feature status & roadmap
-- **[API.md](docs/API.md)** - API documentation
-- **[COMMANDS.md](docs/COMMANDS.md)** - Voice commands reference
-
----
-
-## 🎥 Demo
-
-*(Add screenshots/videos here)*
+```
+RAGS-AI-APP/
+├── backend/              # Node.js/TypeScript backend
+│   ├── src/
+│   │   ├── services/    # 70+ core services
+│   │   ├── routes/      # API endpoints
+│   │   └── config/      # Configuration
+│   └── package.json
+├── desktop/              # Tauri desktop app
+│   ├── src/
+│   │   ├── components/  # 30+ React components
+│   │   ├── services/    # API integration
+│   │   └── store/       # State management
+│   └── src-tauri/       # Rust backend
+├── mobile/               # React Native mobile app
+└── docs/                 # Documentation
+```
 
 ---
 
 ## 🤝 Contributing
 
-This is a personal project, but suggestions and contributions are welcome!
-
 1. Fork the repository
-2. Create your feature branch
-3. Commit your changes
-4. Push to the branch
-5. Open a Pull Request
+2. Create feature branch: `git checkout -b feature/amazing`
+3. Commit changes: `git commit -m 'feat: add amazing feature'`
+4. Push to branch: `git push origin feature/amazing`
+5. Open Pull Request
 
 ---
 
-## 📝 License
+## 📞 Contact
 
-MIT License - See [LICENSE](LICENSE) file
-
----
-
-## 🙏 Credits
-
-Built with:
-- [Ollama](https://ollama.ai/) - Local LLM
-- [Whisper.cpp](https://github.com/ggerganov/whisper.cpp) - STT
-- [Picovoice Porcupine](https://picovoice.ai/) - Wake word
-- [Edge-TTS](https://github.com/rany2/edge-tts) - TTS
-- [Tauri](https://tauri.app/) - Desktop framework
-- [Three.js](https://threejs.org/) - 3D graphics
+<p align="center">
+  <a href="mailto:ragsproai@gmail.com">
+    <img src="https://img.shields.io/badge/Email-ragsproai@gmail.com-red?style=for-the-badge&logo=gmail" alt="Email">
+  </a>
+  <a href="https://ragspro.com">
+    <img src="https://img.shields.io/badge/Website-ragspro.com-blue?style=for-the-badge&logo=google-chrome" alt="Website">
+  </a>
+</p>
 
 ---
 
-## 📧 Contact
+<p align="center">
+  Made with ❤️ by <strong>Raghav Shah</strong>
+  <br>
+  © 2024-2026 All Rights Reserved
+</p>
 
-**Raghav** - [@ragspro](https://github.com/ragspro)
-
-**Project Link:** https://github.com/ragspro/RAGS-AI
-
----
-
-**RAGS AI - Your Offline-First AI Operating System** 🚀
-
-Made with ❤️ by Raghav
+<p align="center">
+  <img src="https://hit.yhype.me/github/profile?user_id=raghavshahhh" alt="Profile Views" width="1" height="1">
+</p>
